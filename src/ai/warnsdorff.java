@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.AI.BASE_URL;
+import static ai.Backtracking.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

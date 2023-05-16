@@ -1,18 +1,16 @@
 package ai;
 
-import static ai.AI.BASE_URL;
+import static ai.Backtracking.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class ACO {
 
-    private static final int MAX_ITERATIONS = 10; // Số lần lặp tối đa
-    private static final int NUM_ANTS = 5; // Số con kiến
+    private static final int MAX_ITERATIONS = 100; // Số lần lặp tối đa
+    private static final int NUM_ANTS = 10; // Số con kiến
     private static final double ALPHA = 1.0; // Tham số alpha
     private static final double BETA = 2.0; // Tham số beta
     private static final double RHO = 0.5; // Tỷ lệ bay hơi
@@ -58,7 +56,7 @@ public class ACO {
 
     public void solve() {
         for (int iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
-            List<int[]> antPaths = new ArrayList<>(NUM_ANTS);
+            List<int[]> antPaths = new ArrayList<>();
 
             // Tạo con kiến và tìm đường đi của chúng
             for (int ant = 0; ant < NUM_ANTS; ant++) {
@@ -177,7 +175,7 @@ public class ACO {
         }
     }
 
-    // Cập nhật pheromone dựa trên đường đi tốt nhất
+    // Cập nhật mức pheromone dựa trên đường đi tốt nhất
     private void updateBestPathPheromone() {
         double deltaPheromone = Q / bestLength;
 
@@ -227,3 +225,4 @@ public class ACO {
         }
     }
 }
+

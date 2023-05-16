@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.AI.BASE_URL;
+import static ai.Backtracking.BASE_URL;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -80,23 +80,25 @@ public class BackTrackingPlusPlus {
                 potentialCycles.add(cycle);
             }
         } else {
-            for (int nextNode =
-0; nextNode < n; nextNode++) {
-if (A[currentNode][nextNode] > 0 && !visited[nextNode]) {
-findHamiltonianCycles(nextNode, path);
-}
-}
-}
-visited[currentNode] = false;
-path.remove(path.size() - 1);
-}private static int calculateCycleCost(List<Integer> cycle) {
-    int cost = 0;
-    int size = cycle.size();
-    for (int i = 0; i < size; i++) {
-        int fromNode = cycle.get(i);
-        int toNode = cycle.get((i + 1) % size);
-        cost += A[fromNode][toNode];
+            for (int nextNode
+                    = 0; nextNode < n; nextNode++) {
+                if (A[currentNode][nextNode] > 0 && !visited[nextNode]) {
+                    findHamiltonianCycles(nextNode, path);
+                }
+            }
+        }
+        visited[currentNode] = false;
+        path.remove(path.size() - 1);
     }
-    return cost;
-}
+
+    private static int calculateCycleCost(List<Integer> cycle) {
+        int cost = 0;
+        int size = cycle.size();
+        for (int i = 0; i < size; i++) {
+            int fromNode = cycle.get(i);
+            int toNode = cycle.get((i + 1) % size);
+            cost += A[fromNode][toNode];
+        }
+        return cost;
+    }
 }

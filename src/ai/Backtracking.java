@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class AI {
+public class Backtracking {
     private static int dem = 0;                                                 // Biến đếm số lượng chu trình
     // TODO: Đường dẫn tới file dulieu.inp
-    public static String BASE_URL = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_3.INP";
+    public static String BASE_URL = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_2.INP";
 
     public static void main(String[] args) {
         try {

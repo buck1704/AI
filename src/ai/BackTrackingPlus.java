@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.AI.BASE_URL;
+import static ai.Backtracking.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -11,7 +11,6 @@ public class BackTrackingPlus {
 
     public static void main(String[] args) {
         try {
-
             Scanner scanner = new Scanner(new File(BASE_URL));
             int n = scanner.nextInt();
             int[][] A = new int[n][n];

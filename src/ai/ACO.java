@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.AI.URL;
+import static ai.AI.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class CoTrongSo_ACO {
+public class ACO {
 
     private static final int MAX_ITERATIONS = 10; // Số lần lặp tối đa
     private static final int NUM_ANTS = 5; // Số con kiến
@@ -27,8 +27,8 @@ public class CoTrongSo_ACO {
     private double bestLength; // Độ dài đường đi tốt nhất
 
     public static void main(String[] args) {
-        CoTrongSo_ACO hc = new CoTrongSo_ACO();
-        hc.readData(URL);
+        ACO hc = new ACO();
+        hc.readData(BASE_URL);
         hc.solve();
         hc.printSolution();
     }

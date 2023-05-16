@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.AI.URL;
+import static ai.AI.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class HamiltonianCycle {
 
     public static void main(String[] args) {
         HamiltonianCycle hc = new HamiltonianCycle();
-        hc.readData(URL);
+        hc.readData(BASE_URL);
         hc.solve();
         hc.printSolution();
     }

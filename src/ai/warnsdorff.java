@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.AI.URL;
+import static ai.AI.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class warnsdorff {
     private static int dem = 0;
     public static void main(String[] args) {
         try {
-            Scanner scanner = new Scanner(new File(URL));
+            Scanner scanner = new Scanner(new File(BASE_URL));
             int n = scanner.nextInt();
             int[][] A = new int[n][n];
 

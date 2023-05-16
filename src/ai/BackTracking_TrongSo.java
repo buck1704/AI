@@ -1,17 +1,17 @@
 package ai;
 
+import static ai.AI.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class AI {
+public class BackTracking_TrongSo {
+
     private static int dem = 0;                                                 // Biến đếm số lượng chu trình
-    // TODO: Đường dẫn tới file dulieu.inp
-    public static String BASE_URL = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_3.INP";
 
     public static void main(String[] args) {
         try {
-            
+
             Scanner scanner = new Scanner(new File(BASE_URL));
             int n = scanner.nextInt();
             int[][] A = new int[n][n];
@@ -25,7 +25,7 @@ public class AI {
 
             boolean[] visited = new boolean[n];
             int[] path = new int[n];
-            
+
             path[0] = 0;                                                        // Bắt đầu từ đỉnh 0
             visited[0] = true;                                                  // Đánh dấu đỉnh 0 đã được thăm
             findHamiltonCycles(A, visited, path, 1, n);
@@ -50,19 +50,18 @@ public class AI {
          tức là đã duyệt qua tất cả các thành phố trong lộ trình, thuật toán kiểm tra xem thành phố cuối cùng có kết 
          nối với thành phố đầu tiên hay không.    */
         if (pos == n) {
-            if (A[path[pos - 1]][0] == 1) {                                     // Kiểm tra xem đỉnh cuối cùng có kết nối với đỉnh đầu tiên hay không
+            if (A[path[pos - 1]][0] > 0) {                                     // Kiểm tra xem đỉnh cuối cùng có kết nối với đỉnh đầu tiên hay không
                 System.out.print("Đường đi Hamilton: ");
                 for (int i = 0; i < n; i++) {
-                    System.out.print((path[i] + 1) + "->");                     // In ra chu trình Hamilton
+                    System.out.print((path[i] + 1) + "->"); // In ra chu trình Hamilton
                 }
                 System.out.println(path[0] + 1);
-                dem++;                                                          // Tăng biến đếm số lượng chu trình
+                dem++; // Tăng biến đếm số lượng chu trình
             }
             return;
         }
-
         for (int i = 1; i < n; i++) {
-            if (A[path[pos - 1]][i] == 1 && !visited[i]) {
+            if (A[path[pos - 1]][i] > 0 && !visited[i]) {
                 path[pos] = i;
                 visited[i] = true;
                 findHamiltonCycles(A, visited, path, pos + 1, n);

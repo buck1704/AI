@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class AI {
     private static int dem = 0;                                                 // Biến đếm số lượng chu trình
     // TODO: Đường dẫn tới file dulieu.inp
-    public static String URL = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\ai\\DULIEU.INP";
+    public static String URL = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU.INP";
 
     public static void main(String[] args) {
         try {

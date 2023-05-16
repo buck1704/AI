@@ -57,7 +57,6 @@ public class TSP {
                 }
             }
         }
-
         return next;
     }
 
@@ -70,7 +69,6 @@ public class TSP {
                 minDistance = graph[i][node];
             }
         }
-
         return minDistance;
     }
 }

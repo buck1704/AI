@@ -6,10 +6,13 @@ import java.util.Scanner;
 
 public class AI {
     private static int dem = 0;                                                 // Biến đếm số lượng chu trình
+    // TODO: Đường dẫn tới file dulieu.inp
+    public static String URL = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\ai\\DULIEU.INP";
 
     public static void main(String[] args) {
         try {
-            Scanner scanner = new Scanner(new File("C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\ai\\DULIEU.INP"));
+            
+            Scanner scanner = new Scanner(new File(URL));
             int n = scanner.nextInt();
             int[][] A = new int[n][n];
             // Đọc dữ liệu của ma trận ở dữ liệu đầu vào vào ma trận A.

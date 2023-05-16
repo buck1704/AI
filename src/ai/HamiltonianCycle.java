@@ -1,5 +1,6 @@
 package ai;
 
+import static ai.AI.URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class HamiltonianCycle {
 
     public static void main(String[] args) {
         HamiltonianCycle hc = new HamiltonianCycle();
-        hc.readData("C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\ai\\DULIEU_3.INP");
+        hc.readData(URL);
         hc.solve();
         hc.printSolution();
     }

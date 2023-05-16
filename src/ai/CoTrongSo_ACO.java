@@ -1,5 +1,6 @@
 package ai;
 
+import static ai.AI.URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class CoTrongSo_ACO {
 
     public static void main(String[] args) {
         CoTrongSo_ACO hc = new CoTrongSo_ACO();
-        hc.readData("C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\ai\\DULIEU_3.INP");
+        hc.readData(URL);
         hc.solve();
         hc.printSolution();
     }

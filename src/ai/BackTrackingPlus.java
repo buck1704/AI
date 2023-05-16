@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class BackTracking_TrongSo {
+public class BackTrackingPlus {
 
     private static int dem = 0;                                                 // Biến đếm số lượng chu trình
 

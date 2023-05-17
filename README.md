@@ -1,8 +1,9 @@
 # AI
 # HƯỚNG DẪN SỬ DỤNG:
   - Tải git ở đường dẫn: https://git-scm.com/       <bỏ qua bước này nếu đã có>
-  - Mở netbeans, ở thanh header tìm: team -> git -> remote -> clone. sau đó paste đường dẫn tới github.
-  - Trỏ chuột file vào file dulieu.inp ở packet data, sau đó chọn properties. tìm dòng all file vào copy đường dẫn.
+  - Vào github, sau đó tìm <>code để lấy đường dẫn.
+  - Mở netbeans, ở thanh header tìm: team -> git -> remote -> clone. sau đó paste đường dẫn tới github lấy được ở trên.
+  - Trỏ chuột file vào file dulieu.inp ở packet data, sau đó chọn properties. tìm dòng all file để copy đường dẫn tới file dulieu.inp.
   - ở class menu.java, thay đổi địa chỉ thành địa chỉ của packet data từ dòng 15 -> 20 bằng đường dẫn lấy được ở trên.
 
 # KIỂM TRA ĐÃ CÓ GIT TRONG MÁY HAY CHƯA

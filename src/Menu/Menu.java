@@ -4,7 +4,6 @@ import ai.ACO;
 import ai.BackTrackingPlus;
 import ai.Backtracking;
 import ai.BranchAndBound;
-import ai.warnsdorff;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -28,9 +27,8 @@ public class Menu {
             System.out.println("1. Giải bằng thuật toán Backtracking");
             System.out.println("2. Giải bằng thuật toán BacktrackingPlus");
             System.out.println("3. Giải bằng thuật toán BranchAndBound");
-            System.out.println("4. Giải bằng thuật toán Warnsdorff");
-            System.out.println("5. Giải bằng thuật toán ACO");
-            System.out.println("6. Đổi file dulieu.inp");
+            System.out.println("4. Giải bằng thuật toán ACO");
+            System.out.println("5. Đổi file dulieu.inp");
             System.out.println("0. Thoát");
             System.out.print("==>  Nhập lựa chọn của bạn: ");
             int choice = scanner.nextInt();
@@ -58,21 +56,15 @@ public class Menu {
                         System.out.println("Thông Báo: Vui lòng chọn file dữ liệu trước!");
                     }
                     break;
+               
                 case 4:
-                    if (DEFAULTDATA != null) {
-                        solveWithWarnsdorff();
-                    } else {
-                        System.out.println("Thông Báo: Vui lòng chọn file dữ liệu trước!");
-                    }
-                    break;
-                case 5:
                     if (DEFAULTDATA != null) {
                         solveWithACO();
                     } else {
                         System.out.println("Thông Báo: Vui lòng chọn file dữ liệu trước!");
                     }
                     break;
-                case 6:
+                case 5:
                     changeDataFile(scanner);
                     break;
                 case 0:
@@ -86,11 +78,6 @@ public class Menu {
         }
 
         scanner.close();
-    }
-
-    private static void solveWithWarnsdorff() {
-        warnsdorff warnsdorff = new warnsdorff();
-        warnsdorff.solve(DEFAULTDATA);
     }
 
     private static void solveWithBacktrackingPlus(String dataFile) {

@@ -1,6 +1,6 @@
 package ai;
 
-import static ai.Backtracking.BASE_URL;
+import static Menu.Menu.BASE_URL;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,9 +26,9 @@ public class BranchAndBound {
         this.cycleCosts = new ArrayList<>();
     }
 
-    public static void main(String[] args) {
+    public static void solveWithBranchAndBound(String dataFile) {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(BASE_URL));
+            BufferedReader reader = new BufferedReader(new FileReader(dataFile));
 
             int n = Integer.parseInt(reader.readLine());
             int[][] A = new int[n][n];
@@ -42,8 +42,8 @@ public class BranchAndBound {
 
             reader.close();
 
-            BranchAndBound hamiltonianCycle = new BranchAndBound(A);
-            List<List<Integer>> cycles = hamiltonianCycle.findHamiltonianCycles();
+            BranchAndBound branchAndBound = new BranchAndBound(A);
+            List<List<Integer>> cycles = branchAndBound.findHamiltonianCycles();
 
             if (cycles.isEmpty()) {
                 System.out.println("Không tồn tại chu trình Hamilton.");
@@ -51,17 +51,17 @@ public class BranchAndBound {
                 System.out.println("Tất cả các chu trình Hamilton:");
                 for (int i = 0; i < cycles.size(); i++) {
                     List<Integer> cycle = cycles.get(i);
-                    int cycleCost = hamiltonianCycle.cycleCosts.get(i);
+                    int cycleCost = branchAndBound.cycleCosts.get(i);
                     System.out.println("Chu trình " + (i + 1) + ": " + cycle);
                     System.out.println("Chi phí: " + cycleCost);
                 }
 
                 System.out.println("Top 3 chu trình tối ưu nhất:");
-                List<Integer> sortedCosts = new ArrayList<>(hamiltonianCycle.cycleCosts);
+                List<Integer> sortedCosts = new ArrayList<>(branchAndBound.cycleCosts);
                 Collections.sort(sortedCosts);
                 for (int i = 0; i < Math.min(3, cycles.size()); i++) {
                     int minCost = sortedCosts.get(i);
-                    int minCostIndex = hamiltonianCycle.cycleCosts.indexOf(minCost);
+                    int minCostIndex = branchAndBound.cycleCosts.indexOf(minCost);
                     List<Integer> minCostCycle = cycles.get(minCostIndex);
                     System.out.println("Chu trình " + (i + 1) + ": " + minCostCycle);
                     System.out.println("Chi phí: " + minCost);

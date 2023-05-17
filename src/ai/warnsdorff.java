@@ -1,15 +1,16 @@
 package ai;
 
-import static ai.Backtracking.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class warnsdorff {
+
     private static int dem = 0;
-    public static void main(String[] args) {
-        try {
-            Scanner scanner = new Scanner(new File(BASE_URL));
+
+    public void solve(String dataFile) {
+    try {
+        Scanner scanner = new Scanner(new File(dataFile));
             int n = scanner.nextInt();
             int[][] A = new int[n][n];
 
@@ -36,7 +37,7 @@ public class warnsdorff {
             e.printStackTrace();
         }
     }
-    
+
     private static void findHamiltonCycles(int[][] A, boolean[] visited, int[] path, int pos, int n) {
         if (pos == n) {
             if (A[path[pos - 1]][0] == 1) {
@@ -61,6 +62,7 @@ public class warnsdorff {
             }
         }
     }
+
     private static int[] sortNeighborsByDegree(int[][] A, boolean[] visited, int[] path, int pos, int n) {
         int[] neighbors = new int[n];
         int[] degreeCount = new int[n];
@@ -84,7 +86,7 @@ public class warnsdorff {
             }
             degreeCount[neighbor] = count;
         }
-        
+
         // Sort neighbors by degree count
         for (int i = 0; i < neighborCount - 1; i++) {
             for (int j = i + 1; j < neighborCount; j++) {
@@ -98,4 +100,3 @@ public class warnsdorff {
         return neighbors;
     }
 }
-

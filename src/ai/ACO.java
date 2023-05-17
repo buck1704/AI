@@ -1,16 +1,18 @@
 package ai;
 
-import static ai.Backtracking.BASE_URL;
+import static Menu.Menu.BASE_URL;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class ACO {
 
-    private static final int MAX_ITERATIONS = 100; // Số lần lặp tối đa
-    private static final int NUM_ANTS = 10; // Số con kiến
+    private static final int MAX_ITERATIONS = 20; // Số lần lặp tối đa
+    private static final int NUM_ANTS = 5; // Số con kiến
     private static final double ALPHA = 1.0; // Tham số alpha
     private static final double BETA = 2.0; // Tham số beta
     private static final double RHO = 0.5; // Tỷ lệ bay hơi
@@ -56,7 +58,7 @@ public class ACO {
 
     public void solve() {
         for (int iteration = 0; iteration < MAX_ITERATIONS; iteration++) {
-            List<int[]> antPaths = new ArrayList<>();
+            List<int[]> antPaths = new ArrayList<>(NUM_ANTS);
 
             // Tạo con kiến và tìm đường đi của chúng
             for (int ant = 0; ant < NUM_ANTS; ant++) {
@@ -83,13 +85,12 @@ public class ACO {
 
             // Cập nhật pheromone dựa trên đường đi tốt nhất
             updateBestPathPheromone();
-
             // In thông tin đường đi tốt nhất tại lần lặp hiện tại (tùy chọn)
             System.out.println("Iteration " + (iteration + 1) + ": Best Length = " + bestLength);
         }
     }
 
-    // Tạo đường đi cho một con kiến
+// Tạo đường đi cho một con kiến
     private int[] constructSolution() {
         int[] path = new int[n];
         boolean[] visited = new boolean[n];
@@ -108,7 +109,7 @@ public class ACO {
         return path;
     }
 
-    // Lựa chọn thành phố tiếp theo dựa trên mức pheromone và heuristic
+// Lựa chọn thành phố tiếp theo dựa trên mức pherom  one và heuristic
     private int selectNextCity(int currentCity, boolean[] visited) {
         double[] probabilities = new double[n];
         double sum = 0.0;
@@ -146,7 +147,7 @@ public class ACO {
         return -1; // Không tìm thấy thành phố thích hợp (nếu mọi thành phố đã được thăm)
     }
 
-    // Cập nhật mức pheromone dựa trên các con kiến
+// Cập nhật mức pheromone dựa trên các con kiến
     private void updatePheromone(List<int[]> antPaths) {
         for (int[] path : antPaths) {
             double deltaPheromone = Q / calculateLength(path);
@@ -175,7 +176,7 @@ public class ACO {
         }
     }
 
-    // Cập nhật mức pheromone dựa trên đường đi tốt nhất
+// Cập nhật pheromone dựa trên đường đi tốt nhất
     private void updateBestPathPheromone() {
         double deltaPheromone = Q / bestLength;
 
@@ -193,7 +194,7 @@ public class ACO {
         pheromone[firstCity][lastCity] += deltaPheromone;
     }
 
-    // Tính độ dài của đường đi
+// Tính độ dài của đường đi
     private double calculateLength(int[] path) {
         double length = 0.0;
 
@@ -217,12 +218,12 @@ public class ACO {
             System.out.println("Không tìm thấy chu trình Hamilton!");
         } else {
             System.out.print("Chu trình Hamilton: ");
-            for (int city : bestPath) {
+            for (int i = 0; i < n; i++) {
+                int city = bestPath[i] + 1; // Cộng thêm 1 để bắt đầu từ 1
                 System.out.print(city + " -> ");
             }
-            System.out.println(bestPath[0]); // In thành phố xuất phát để hoàn thành chu trình
+            System.out.println(bestPath[0] + 1); // In thành phố xuất phát để hoàn thành chu trình
             System.out.println("Độ dài: " + bestLength);
         }
     }
 }
-

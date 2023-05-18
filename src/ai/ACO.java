@@ -11,16 +11,16 @@ import java.util.Scanner;
 
 public class ACO {
 
-    private static final int MAX_ITERATIONS = 20; // Số lần lặp tối đa
-    private static final int NUM_ANTS = 5; // Số con kiến
-    private static final double ALPHA = 1.0; // Tham số alpha
-    private static final double BETA = 2.0; // Tham số beta
-    private static final double RHO = 0.5; // Tỷ lệ bay hơi
-    private static final double Q = 100.0; // Tham số Q
+    private static final int MAX_ITERATIONS = 20;   // Số lần lặp tối đa
+    private static final int NUM_ANTS = 5;          // Số con kiến
+    private static final double ALPHA = 1.0;        // Tham số alpha
+    private static final double BETA = 2.0;         // Tham số beta
+    private static final double RHO = 0.5;          // Tỷ lệ bay hơi
+    private static final double Q = 100.0;          // Tham số Q
     private static final double INITIAL_PHEROMONE = 1.0; // Mức pheromone ban đầu
 
-    private int n; // Số thành phố
-    private int[][] A; // Ma trận giao thông
+    private int n;                                  // Số thành phố
+    private int[][] A;                              // Ma trận giao thông
 
     private double[][] pheromone; // Ma trận pheromone
     private int[] bestPath; // Đường đi tốt nhất

@@ -17,6 +17,11 @@ public class Menu {
     public static String BASE_URL2 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_2.INP";
     public static String BASE_URL3 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_3.INP";
     public static String BASE_URL4 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_4.INP";
+    public static String BASE_URL5 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_5.INP";
+    public static String BASE_URL6 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_6.INP";
+    public static String BASE_URL7 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_7.INP";
+    public static String BASE_URL8 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_8.INP";
+    public static String BASE_URL9 = "C:\\Users\\84336\\OneDrive\\Documents\\NetBeansProjects\\Test java\\AI\\src\\data\\DULIEU_9.INP";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -104,13 +109,19 @@ public class Menu {
     boolean backToMainMenu = false;
     while (!backToMainMenu) {
         System.out.println("\n-------------------------------------- LIST DATA FILE ------------------------------------------");
-        System.out.println("   1. Chọn file DULIEU.INP");
-        System.out.println("   2. Chọn file DULIEU_1.INP");
-        System.out.println("   3. Chọn file DULIEU_2.INP");
-        System.out.println("   4. Chọn file DULIEU_3.INP");
-        System.out.println("   5. Hiển thị file dulieu.inp");
-        System.out.println("   0. Trở lại menu chính");
-        System.out.print("   ==> Nhập lựa chọn của bạn: ");
+        System.out.println("\tNhập 1. Chọn file DULIEU.INP với n = 5, không có trọng số");
+        System.out.println("\tNhập 2. Chọn file DULIEU_1.INP với n = 7, không có trọng số");
+        System.out.println("\tNhập 3. Chọn file DULIEU_2.INP với n = 10, không có trọng số");
+        System.out.println("\tNhập 4. Chọn file DULIEU_3.INP với n = 4, có trọng số");
+        System.out.println("\tNhập 5. Chọn file DULIEU_4.INP với n = 5, có trọng số");
+        System.out.println("\tNhập 6. Chọn file DULIEU_5.INP với n = 10, có trọng số");
+        System.out.println("\tNhập 7. Chọn file DULIEU_6.INP với n = 10, có trọng số");
+        System.out.println("\tNhập 8. Chọn file DULIEU_7.INP với n = 15, có trọng số");
+        System.out.println("\tNhập 9. Chọn file DULIEU_8.INP với n = 15, có trọng số");
+        System.out.println("\tNhập 10. Chọn file DULIEU_9.INP với n = 20, có trọng số");
+        System.out.println("\tNhập 11. Hiển thị ma trận đang được lựa chọn");
+        System.out.println("\tNhập 0. Trở lại menu chính");
+        System.out.print("\t ==> Nhập lựa chọn của bạn: ");
         int choice = scanner.nextInt();
 
         switch (choice) {
@@ -130,6 +141,24 @@ public class Menu {
                 DEFAULTDATA = BASE_URL3;
                 break;
             case 5:
+                DEFAULTDATA = BASE_URL4;
+                break;
+            case 6:
+                DEFAULTDATA = BASE_URL5;
+                break;
+            case 7:
+                DEFAULTDATA = BASE_URL6;
+                break;
+            case 8:
+                DEFAULTDATA = BASE_URL7;
+                break;
+            case 9:
+                DEFAULTDATA = BASE_URL8;
+                break;
+            case 10:
+                DEFAULTDATA = BASE_URL9;
+                break;
+            case 11:
                 displayDataFile(DEFAULTDATA);
                 break;
             default:
